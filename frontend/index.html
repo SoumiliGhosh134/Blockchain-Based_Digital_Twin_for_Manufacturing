@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin Factory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Digital Twin Factory Dashboard</h1>
+
+        <!-- Create Twin Section -->
+        <div class="card">
+            <h2>Create Digital Twin</h2>
+            <form id="createTwinForm">
+                <input type="text" id="assetId" placeholder="Asset ID" required>
+                <input type="text" id="assetType" placeholder="Asset Type" required>
+                <textarea id="metadata" placeholder="Metadata" required></textarea>
+                <button type="submit">Create Twin</button>
+            </form>
+        </div>
+
+        <!-- Update Twin Section -->
+        <div class="card">
+            <h2>Update Digital Twin</h2>
+            <form id="updateTwinForm">
+                <input type="text" id="updateAssetId" placeholder="Asset ID" required>
+                <input type="text" id="status" placeholder="Status" required>
+                <textarea id="updateMetadata" placeholder="Metadata" required></textarea>
+                <button type="submit">Update Twin</button>
+            </form>
+        </div>
+
+        <!-- Get Twin Section -->
+        <div class="card">
+            <h2>Get Digital Twin Info</h2>
+            <input type="text" id="getAssetId" placeholder="Asset ID" required>
+            <button onclick="getTwin()">Get Info</button>
+            <div id="twinInfo"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
